@@ -1,4 +1,4 @@
-﻿namespace MDCheck
+﻿namespace ChecksumCheck
 {
     partial class Main
     {
@@ -188,7 +188,7 @@
             Controls.Add(textBoxFile);
             MaximizeBox = false;
             Name = "Form1";
-            Text = "MDCheck";
+            Text = "ChecksumCheck";
             ResumeLayout(false);
             PerformLayout();
         }
