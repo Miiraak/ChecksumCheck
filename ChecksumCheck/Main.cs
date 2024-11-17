@@ -93,19 +93,34 @@ namespace ChecksumCheck
 
             if (checkBoxMD5.Checked)
             {
-                MD5Checksum.BackColor = MD5Checksum.Text == ComputeHash(filePath, MD5.Create()) ? Color.Green : Color.Red;
+                if (MD5Checksum.Text.Trim() != "")
+                    MD5Checksum.BackColor = MD5Checksum.Text == ComputeHash(filePath, MD5.Create()) ? Color.Green : Color.Red;
+                else
+                    MD5Checksum.Text = ComputeHash(filePath, MD5.Create());
             }
+
             if (checkBoxSHA1.Checked)
             {
-                SHA1Checksum.BackColor = SHA1Checksum.Text == ComputeHash(filePath, SHA1.Create()) ? Color.Green : Color.Red;
+                if (SHA1Checksum.Text.Trim() != "")
+                    SHA1Checksum.BackColor = SHA1Checksum.Text == ComputeHash(filePath, SHA1.Create()) ? Color.Green : Color.Red;
+                else
+                    SHA1Checksum.Text = ComputeHash(filePath, SHA1.Create());
             }
+
             if (checkBoxSHA256.Checked)
             {
-                SHA256Checksum.BackColor = SHA256Checksum.Text == ComputeHash(filePath, SHA256.Create()) ? Color.Green : Color.Red;
+                if (SHA256Checksum.Text.Trim() != "")
+                    SHA256Checksum.BackColor = SHA256Checksum.Text == ComputeHash(filePath, SHA256.Create()) ? Color.Green : Color.Red;
+                else
+                    SHA256Checksum.Text = ComputeHash(filePath, SHA256.Create());
             }
+
             if (checkBoxSHA512.Checked)
             {
-                SHA512Checksum.BackColor = SHA512Checksum.Text == ComputeHash(filePath, SHA512.Create()) ? Color.Green : Color.Red;
+                if (SHA512Checksum.Text.Trim() != "")
+                    SHA512Checksum.BackColor = SHA512Checksum.Text == ComputeHash(filePath, SHA512.Create()) ? Color.Green : Color.Red;
+                else
+                    SHA512Checksum.Text = ComputeHash(filePath, SHA512.Create());
             }
         }
 
