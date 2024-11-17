@@ -95,15 +95,15 @@ namespace ChecksumCheck
             {
                 if (MD5Checksum.Text.Trim() != "")
                     MD5Checksum.BackColor = MD5Checksum.Text == ComputeHash(filePath, MD5.Create()) ? Color.Green : Color.Red;
-                else 
+                else
                     MD5Checksum.Text = ComputeHash(filePath, MD5.Create());
             }
-            
+
             if (checkBoxSHA1.Checked)
             {
                 if (SHA1Checksum.Text.Trim() != "")
                     SHA1Checksum.BackColor = SHA1Checksum.Text == ComputeHash(filePath, SHA1.Create()) ? Color.Green : Color.Red;
-                else 
+                else
                     SHA1Checksum.Text = ComputeHash(filePath, SHA1.Create());
             }
 
