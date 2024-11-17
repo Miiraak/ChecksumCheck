@@ -48,11 +48,11 @@ Contributions are welcome! To contribute to this project, please follow these st
 
 ## Issues and Suggestions
 
-If you encounter any issues or have suggestions for improving the project, please use the [GitHub issue tracker](https://github.com/Miiraak/[APP_NAME]]/issues).
+If you encounter any issues or have suggestions for improving the project, please use the [GitHub issue tracker](https://github.com/Miiraak/ChecksumCheck/issues).
 
 ## License
 
-This project is licensed under the [LICENSE_NAME]. See the [LICENSE](./LICENSE) file for more details.
+This project is licensed under the MIT. See the [LICENSE](./LICENSE) file for more details.
 
 ## Contributors
 
