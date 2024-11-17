@@ -1,6 +1,6 @@
 using System.Security.Cryptography;
 
-namespace MDCheck
+namespace ChecksumCheck
 {
     public partial class Main : Form
     {

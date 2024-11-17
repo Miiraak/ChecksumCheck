@@ -1,4 +1,4 @@
-namespace MDCheck
+namespace ChecksumCheck
 {
     internal static class Program
     {
