@@ -88,8 +88,17 @@ namespace ChecksumCheck
         /// <param name="e"></param>
         private void ButtonCheck_Click(object sender, EventArgs e)
         {
+            checkBoxMD5.Enabled = false;
+            checkBoxSHA1.Enabled = false;
+            checkBoxSHA256.Enabled = false;
+            checkBoxSHA512.Enabled = false;
+            buttonChooseFile.Enabled = false;
             buttonCheck.Enabled = false;
             buttonClear.Enabled = true;
+            MD5Checksum.ReadOnly = true;
+            SHA1Checksum.ReadOnly = true;
+            SHA256Checksum.ReadOnly = true;
+            SHA512Checksum.ReadOnly = true;
 
             if (checkBoxMD5.Checked)
             {
@@ -137,6 +146,7 @@ namespace ChecksumCheck
                 {
                     textBox.Clear();
                     textBox.BackColor = Color.White;
+                    textBox.ReadOnly = false;
                 }
                 if (control is CheckBox checkBox)
                 {
@@ -146,6 +156,7 @@ namespace ChecksumCheck
 
                 buttonClear.Enabled = false;
                 buttonCheck.Enabled = false;
+                buttonChooseFile.Enabled = true;
             }
         }
     }
