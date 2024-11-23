@@ -88,24 +88,62 @@ namespace ChecksumCheck
         /// <param name="e"></param>
         private void ButtonCheck_Click(object sender, EventArgs e)
         {
+            checkBoxMD5.Enabled = false;
+            checkBoxSHA1.Enabled = false;
+            checkBoxSHA256.Enabled = false;
+            checkBoxSHA512.Enabled = false;
+            buttonChooseFile.Enabled = false;
             buttonCheck.Enabled = false;
             buttonClear.Enabled = true;
+            MD5Checksum.ReadOnly = true;
+            SHA1Checksum.ReadOnly = true;
+            SHA256Checksum.ReadOnly = true;
+            SHA512Checksum.ReadOnly = true;
+
 
             if (checkBoxMD5.Checked)
             {
-                MD5Checksum.BackColor = MD5Checksum.Text == ComputeHash(filePath, MD5.Create()) ? Color.Green : Color.Red;
+                if (MD5Checksum.Text == "")
+                {
+                    MD5Checksum.Text = ComputeHash(filePath, MD5.Create());
+                }
+                else
+                {
+                    MD5Checksum.BackColor = MD5Checksum.Text == ComputeHash(filePath, MD5.Create()) ? Color.Green : Color.Red;
+                }
             }
             if (checkBoxSHA1.Checked)
             {
-                SHA1Checksum.BackColor = SHA1Checksum.Text == ComputeHash(filePath, SHA1.Create()) ? Color.Green : Color.Red;
+                if (SHA1Checksum.Text == "")
+                {
+                    SHA1Checksum.Text = ComputeHash(filePath, SHA1.Create());
+                }
+                else
+                {
+                    SHA1Checksum.BackColor = SHA1Checksum.Text == ComputeHash(filePath, SHA1.Create()) ? Color.Green : Color.Red;
+                }
             }
             if (checkBoxSHA256.Checked)
             {
-                SHA256Checksum.BackColor = SHA256Checksum.Text == ComputeHash(filePath, SHA256.Create()) ? Color.Green : Color.Red;
+                if (SHA256Checksum.Text == "")
+                {
+                    SHA256Checksum.Text = ComputeHash(filePath, SHA256.Create());
+                }
+                else
+                {
+                    SHA256Checksum.BackColor = SHA256Checksum.Text == ComputeHash(filePath, SHA256.Create()) ? Color.Green : Color.Red;
+                }
             }
             if (checkBoxSHA512.Checked)
             {
-                SHA512Checksum.BackColor = SHA512Checksum.Text == ComputeHash(filePath, SHA512.Create()) ? Color.Green : Color.Red;
+                if (SHA512Checksum.Text == "")
+                {
+                    SHA512Checksum.Text = ComputeHash(filePath, SHA512.Create());
+                }
+                else
+                {
+                    SHA512Checksum.BackColor = SHA512Checksum.Text == ComputeHash(filePath, SHA512.Create()) ? Color.Green : Color.Red;
+                }
             }
         }
 
@@ -122,16 +160,18 @@ namespace ChecksumCheck
                 {
                     textBox.Clear();
                     textBox.BackColor = Color.White;
+                    textBox.ReadOnly = false;
                 }
                 if (control is CheckBox checkBox)
                 {
                     checkBox.Checked = false;
                     checkBox.Enabled = false;
                 }
-
-                buttonClear.Enabled = false;
-                buttonCheck.Enabled = false;
             }
+
+            buttonClear.Enabled = false;
+            buttonCheck.Enabled = false;
+            buttonChooseFile.Enabled = true;
         }
     }
 }
